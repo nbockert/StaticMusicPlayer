@@ -75,20 +75,20 @@ fun MusicPlayerScreen() {
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
 
-            ControlButton(icon = Icons.AutoMirrored.Filled.ArrowBack, description = "Previous"){}
-            ControlButton(
+            MakeButton(icon = Icons.AutoMirrored.Filled.ArrowBack, description = "Previous"){}
+            MakeButton(
                 icon = if (isPlaying) pauseicon else Icons.Filled.PlayArrow, // Switch icon dynamically
                 description = if (isPlaying) "Pause" else "Play"
             ){
                 isPlaying = !isPlaying
             }
-            ControlButton(icon = Icons.AutoMirrored.Filled.ArrowForward, description = "Next"){}
+            MakeButton(icon = Icons.AutoMirrored.Filled.ArrowForward, description = "Next"){}
         }
     }
 }
 
 @Composable
-fun ControlButton(icon: ImageVector, description: String,onClick: () -> Unit) {
+fun MakeButton(icon: ImageVector, description: String,onClick: () -> Unit) {
     if(description==="Play" || description === "Pause"){
         Button(
             onClick = onClick,
